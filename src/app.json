@@ -1,0 +1,71 @@
+{
+  "name": "Test",
+  "modules": [{ "name": "video", "subModules": ["interactive"] }, { "name": "aframe" }],
+  "codes": [
+    {
+      "scanType": "displayCode",
+      "scan": 5,
+      "id": 1,
+      "contentType": "video",
+      "videoData": {
+        "id": 1,
+        "vids": [
+          {
+            "url": "videos/spook.webm",
+            "extension": "webm"
+          },
+          {
+            "url": "videos/spook.mp4",
+            "extension": "mp4"
+          }
+        ],
+        "height": 3,
+        "width": 5.333333333333333,
+        "interactive": [
+          {
+            "type": "alert",
+            "title": "Pause",
+            "text": "Continue watching...",
+            "sec": 3,
+            "executed": false,
+            "id": 0
+          },
+          {
+            "type": "question",
+            "title": "Jump",
+            "text": "Do you want to jump to 5 seconds",
+            "buttons": [
+              {
+                "text": "ok",
+                "jumpTo": 5
+              },
+              {
+                "text": "no"
+              }
+            ],
+            "sec": 5,
+            "executed": false,
+            "id": 1
+          },
+          {
+            "type": "end",
+            "sec": 7,
+            "executed": false,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "scanType": "displayCode",
+      "scan": 4,
+      "id": 2,
+      "contentType": "aframe",
+      "aframeData": {
+        "js": "console.log(\"test\");",
+        "assets": "",
+        "aframe": "<a-box position=\"0 0 0\" rotation=\"0 0 0\" color=\"#4CC3D9\"></a-box>"
+      }
+    }
+  ]
+}
