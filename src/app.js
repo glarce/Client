@@ -23,7 +23,6 @@ export default class App {
       aMarker.setAttribute('id', `marker${code.id}`)
       aMarker.setAttribute('type', 'barcode')
       aMarker.setAttribute('value', code.scan)
-      console.log(marker.element)
       aMarker.appendChild(marker.element)
 
       document.getElementById('assets').appendChild(marker.assets)

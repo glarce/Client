@@ -7,7 +7,8 @@ export default class AFrame {
     this.config = data
 
     const { js, assets } = this.config.aframeData
-    this.assets = assets
+    this.assets = stringToHTML(assets)
+    if (!this.assets) this.assets = document.createElement('div')
 
     this.config.func = new Function(js)
   }
