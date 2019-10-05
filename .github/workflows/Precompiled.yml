@@ -1,0 +1,28 @@
+name: Create Precompiled archive
+
+on: 
+  push:
+    branches: [release/*]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Installing Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    - name: Installing dependancies
+      run: |
+        npm install
+      env:
+        CI: true
+    - name: Build
+      run: npm build:pre
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: preCompiled.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
