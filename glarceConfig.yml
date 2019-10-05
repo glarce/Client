@@ -1,0 +1,10 @@
+preCompiled:
+  available: true
+  compressed: true
+  url: https://github.com/glarce/Client/releases/latest/preCompiled.zip
+  jsonFile: config.js
+
+compiled: 
+  available: true
+  jsonFile: src/app.json
+  npmCompileCommand: build

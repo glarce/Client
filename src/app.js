@@ -2,11 +2,11 @@ require('./modules/video')
 require('./modules/aframe')
 
 export default class App {
-  constructor(config) {
+  constructor (config) {
     this.config = config
   }
 
-  async init() {
+  async init () {
     const { name, codes, modules } = this.config
     document.getElementsByTagName('title')[0].innerText = name
 
@@ -14,10 +14,10 @@ export default class App {
       const { loadModuleConfig } = require(`./modules/${module.name}`)
       loadModuleConfig(this.config)
     }
-    
+
     for (const code of codes) {
-      const module = require(`./modules/${code.contentType}`)
-      const marker = new module.default(code)
+      const { default: Module } = require(`./modules/${code.contentType}`)
+      const marker = new Module(code)
 
       const aMarker = document.createElement('a-marker')
       aMarker.setAttribute('id', `marker${code.id}`)

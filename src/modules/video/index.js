@@ -1,11 +1,11 @@
-let videoConfig = {}
+// let videoConfig = {}
 
-export function loadModuleConfig(config) {
-  videoConfig = config
+export function loadModuleConfig (config) {
+  // videoConfig = config
 }
 
 export default class Video {
-  constructor(config) {
+  constructor (config) {
     this.config = config
 
     const { id, vids, width, height } = config.videoData
@@ -20,7 +20,7 @@ export default class Video {
     this.element.setAttribute('height', height)
 
     this.assets = document.createElement('video')
-    
+
     this.assets.setAttribute('id', `vid${id}`)
     this.assets.setAttribute('preload', 'auto')
     this.assets.setAttribute('class', 'vidh')
