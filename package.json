@@ -1,6 +1,6 @@
 {
   "name": "@glarce/client",
-  "version": "master",
+  "version": "1.0.0-pre.1",
   "description": "The AR client for Glarce AR",
   "main": "index.js",
   "scripts": {
