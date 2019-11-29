@@ -13,14 +13,15 @@ jobs:
         node-version: 10.x
     - name: Installing dependencies
       run: |
-        npm install
+        npm install --global yarn
+        yarn
       env:
         CI: true
     - name: Build
-      run: ls && npm run build:pre
-    # - name: Release
-    #   uses: softprops/action-gh-release@v1
-    #   with:
-    #     files: preCompiled.zip
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+      run: ls && yarn build:pre
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: preCompiled.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
